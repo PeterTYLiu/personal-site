@@ -1,0 +1,58 @@
+.controls {
+  display: flex;
+  padding: 16px 0;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  > button {
+    border-radius: 99px;
+    border: 2px solid var(--theme);
+    color: var(--theme);
+    padding: 5px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    &:hover {
+      background-color: color-mix(in srgb, var(--theme) 12%, white);
+    }
+    &.active {
+      font-weight: bold;
+      color: white;
+      background-color: var(--theme);
+    }
+  }
+}
+
+.items {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    background: rgb(255, 255, 255);
+    top: 0;
+    bottom: 0;
+    left: 12px;
+    width: 16px;
+  }
+}
+
+.timeline {
+  padding: 0 32px;
+  width: 500px;
+}
+
+.all {
+  --theme: rgb(255, 98, 98);
+}
+.education {
+  --theme: green;
+}
+.work {
+  --theme: blue;
+}
+.project {
+  --theme: purple;
+}
+.award {
+  --theme: rgb(216, 137, 0);
+}
