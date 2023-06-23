@@ -1,22 +1,31 @@
+.about {
+  background: white;
+  width: 400px;
+  padding: 24px;
+  align-self: flex-start;
+}
+
 .controls {
   display: flex;
-  padding: 16px 0;
+  padding-bottom: 20px;
   gap: 6px;
   flex-wrap: wrap;
-  justify-content: center;
   > button {
+    min-width: 100px;
     border-radius: 99px;
-    border: 2px solid var(--theme);
+    border: 1px solid var(--theme);
     color: var(--theme);
     padding: 5px 14px;
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: center;
     gap: 6px;
+    transition: all 0.2s;
     &:hover {
       background-color: color-mix(in srgb, var(--theme) 12%, white);
     }
     &.active {
-      font-weight: bold;
       color: white;
       background-color: var(--theme);
     }
@@ -25,21 +34,40 @@
 
 .items {
   position: relative;
-  &:after {
+  &:before {
     content: "";
     position: absolute;
     background: rgb(255, 255, 255);
     top: 0;
     bottom: 0;
-    left: 12px;
-    width: 16px;
+    left: 16px;
+    width: 8px;
+    border-radius: 99px;
   }
 }
 
-.timeline {
-  padding: 0 32px;
-  width: 500px;
+.items-wrapper {
+  overflow-y: auto;
+  flex: 1;
 }
+
+.main {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  gap: 24px;
+  padding: 24px 24px 0px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.timeline {
+  width: 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+// Just for passing down CSS custom properties
 
 .all {
   --theme: rgb(255, 98, 98);

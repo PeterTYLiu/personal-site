@@ -30,6 +30,10 @@ ul {
   padding-inline-start: 24px;
 }
 
+li:not(:last-child) {
+  margin-bottom: 6px;
+}
+
 h1,
 h2,
 h3,

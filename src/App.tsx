@@ -19,8 +19,10 @@ function App() {
   const [view, setView] = useState<ItemType[]>(defaultView);
 
   return (
-    <main>
-      <div></div>
+    <main className={styles.main}>
+      <div className={styles.about}>
+        <h1>Peter Liu</h1>
+      </div>
       <div className={styles.timeline}>
         <div className={styles.controls}>
           <button className={`${view.length > 1 ? styles.active : ""} ${styles.all}`} onClick={() => setView([...defaultView])}>
@@ -39,12 +41,14 @@ function App() {
             );
           })}
         </div>
-        <div className={styles.items}>
-          {data
-            .sort((a, b) => Date.parse(b.endDate) - Date.parse(a.endDate))
-            .map((i) => (
-              <ItemCard item={i} key={i.key} visible={view.includes(i.type)} showType={view.length > 1} className={styles[i.type]} />
-            ))}
+        <div className={styles["items-wrapper"]}>
+          <div className={styles.items}>
+            {data
+              .sort((a, b) => Date.parse(b.endDate) - Date.parse(a.endDate))
+              .map((i) => (
+                <ItemCard item={i} key={i.key} visible={view.includes(i.type)} showType={view.length > 1} className={styles[i.type]} />
+              ))}
+          </div>
         </div>
       </div>
     </main>
