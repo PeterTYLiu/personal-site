@@ -33,7 +33,7 @@ export const data: Item[] = [
     location: "Waterloo",
     position: "Web Communications Designer",
     siteUrl: "https://www.teledynedalsa.com/en/home/",
-    tools: ["Adobe Illustrator", "Adobe Photoshop", "Adobe Premiere Pro", "HootSuite", "HTML", "CSS"],
+    tools: ["Illustrator", "Photoshop", "Premiere Pro", "InDesign", "HootSuite", "HTML", "CSS"],
   },
   {
     key: "threekit-ux-consultant",
