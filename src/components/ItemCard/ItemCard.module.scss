@@ -1,9 +1,11 @@
 .article {
   background-color: white;
+  border: 1px solid #d8d8d8;
   border-left: 3px solid var(--theme);
   flex-grow: 1;
   flex-shrink: 1;
-  overflow: hidden;
+  transition-property: translate;
+  transition-duration: 0.6s;
 }
 
 .header {
@@ -26,15 +28,15 @@
 }
 
 .inner {
-  padding: 11px 12px 14px;
+  padding: 11px 12px 12px;
 }
 
 .links {
   display: flex;
   gap: 8px;
-  border-top: 1px solid rgb(210, 210, 210);
-  padding-top: 8px;
-  margin-top: 8px;
+  border-top: 1px solid #dedede;
+  padding-top: 10px;
+  margin-top: 10px;
   > a {
     display: flex;
     align-items: center;
@@ -60,8 +62,8 @@
 }
 
 .title {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 1.3;
   margin-bottom: 8px;
 }
 
@@ -73,7 +75,6 @@
   > * {
     font-size: 12px;
     font-weight: bold;
-    border-radius: 99px;
     background-color: rgb(224, 224, 224);
     color: #656565;
     padding: 2px 6px;
@@ -90,8 +91,8 @@
   display: flex;
   gap: 12px;
   margin-bottom: 12px;
-  max-height: 9999px;
-  transition-property: margin-bottom, max-height, padding, opacity, translate;
+  max-height: 999px;
+  transition-property: margin-bottom, max-height, opacity;
   transition-duration: 0.6s;
 
   &.hidden {
@@ -101,6 +102,8 @@
     user-select: none;
     pointer-events: none;
     opacity: 0;
-    translate: 500px;
+    .article {
+      translate: 500px;
+    }
   }
 }

@@ -11,7 +11,6 @@ export interface Item {
   position?: string;
   title: string;
   location?: string;
-  imageSrc?: string;
   description: string;
   bulletPoints?: ReactNode[];
   siteUrl?: string;
@@ -38,12 +37,12 @@ const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
 
 export default function ItemCard({
   item,
-  visible,
+  hidden,
   showType,
   className,
 }: {
   item: Item;
-  visible: boolean;
+  hidden: boolean;
   showType: boolean;
   className: string;
 }) {
@@ -53,7 +52,7 @@ export default function ItemCard({
   const endDateString = endDate === "present" ? "present" : formatDate(endDate);
 
   return (
-    <div className={`${styles.wrapper} ${!visible && styles.hidden} ${className}`}>
+    <div className={`${styles.wrapper} ${hidden && styles.hidden} ${className}`} hidden={hidden}>
       <div className={styles.icon}>
         <img src={`./images/icons/${iconName}`} width="40" height="40" loading="lazy" />
       </div>

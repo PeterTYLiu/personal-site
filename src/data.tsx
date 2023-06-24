@@ -7,8 +7,8 @@ export const data: Item[] = [
     iconName: "sortabase.png",
     description: "Working full-time with my cofounder on a collaborative, visual database-building platform for communities",
     bulletPoints: [
-      <>Working on every part of the product stack, from strategy to design to frontend to backend to devops</>,
-      <>After some pivots, our current product has several hundred users and dozens of community-built databases</>,
+      "Working on every part of the product stack, from strategy to design to frontend to backend to devops",
+      "After a pivot, our current product has hundreds of users and thousands of posts across dozens of community-built databases",
     ],
     endDate: "present",
     startDate: "2021-11-01",
@@ -41,15 +41,9 @@ export const data: Item[] = [
     iconName: "threekit.png",
     description: "Worked with clients and internal sales & technical teams to deploy Threekit's technology with superior UX outcomes",
     bulletPoints: [
-      <>
-        Communicated with prospective clients during the sales cycle to understand their business needs, and communicate how Threekit could
-        enable compelling user experiences
-      </>,
-      <>
-        Create low- and high-fidelity Figma designs for prospective and new clients showing how our technology would be used on their
-        websites
-      </>,
-      <>Designed a React component library and design system to improve DX when using the Threekit platform</>,
+      "Communicated with prospective clients during the sales cycle to understand their business needs, and communicate how Threekit could enable compelling user experiences",
+      "Create low- and high-fidelity Figma designs for prospective and new clients showing how our technology would be used on their websites",
+      "Designed a React component library and design system to improve DX when using the Threekit platform",
     ],
     endDate: "2021-10-15",
     startDate: "2021-05-01",
@@ -75,7 +69,7 @@ export const data: Item[] = [
     title: "Threekit",
     location: "Ottawa",
     position: "UX Designer",
-    siteUrl: "https://sortabase.com",
+    siteUrl: "https://threekit.com",
     tools: ["Figma", "Gitlab", "Jira"],
   },
   {
@@ -84,11 +78,8 @@ export const data: Item[] = [
     iconName: "fairventures.png",
     description: "Co-op position at the FairVentures Innovation Lab",
     bulletPoints: [
-      <>
-        Interviewed industry insiders and conducted user testing to design interactive and understandable insurance policy purchasing
-        workflows
-      </>,
-      <>Ran design sprints to design internal tools for improving innovation and collaboration between employees in large enterprises</>,
+      "Interviewed industry insiders and conducted user testing to design interactive and understandable insurance policy purchasing workflows",
+      "Ran design sprints to design internal tools for improving innovation and collaboration between employees in large enterprises",
     ],
     endDate: "2017-12-31",
     startDate: "2017-09-01",
@@ -136,10 +127,10 @@ export const data: Item[] = [
     key: "toaster",
     type: "project",
     iconName: "toaster.png",
-    description: "3D modelling tool that outputs pure HTML and CSS",
+    description: "3D modelling tool that outputs pure HTML and CSS. Includes a node-based scene graph with property inheritence.",
     endDate: "2023-05-01",
     title: "Toaster",
-    bulletPoints: [<>Reached front page of Hacker News</>, <>200+ stars on Github</>],
+    bulletPoints: ["Reached front page of Hacker News", "200+ stars on Github"],
     siteUrl: "https://petertyliu.github.io/toaster/",
     repoUrl: "https://github.com/PeterTYLiu/toaster",
     tools: ["Vite", "SASS", "TypeScript", "React", "Github Pages"],
@@ -148,7 +139,8 @@ export const data: Item[] = [
     key: "xmorphic.dev",
     type: "project",
     iconName: "xmorphic.png",
-    description: "Phyisics-based hyperrealistic CSS shadow/gradient generator",
+    description:
+      "Phyisics-based hyperrealistic CSS shadow/gradient generator. Built with modern CSS features such as custom properties and trigonometric functions.",
     endDate: "2023-04-01",
     title: "𝑥morphic.dev",
     siteUrl: "https://xmorphic.dev",
@@ -163,8 +155,8 @@ export const data: Item[] = [
     title: "Communitech Design to Win",
     position: "First Place",
     bulletPoints: [
-      <>Came in first place with a $5000 prize</>,
-      <>Competed against 25 finalists, out of hundreds of competitors from across Canada</>,
+      "Came in first place with a $5000 prize",
+      "Competed against 25 finalists, out of hundreds of competitors from across Canada",
     ],
     endDate: "2019-01-01",
     siteUrl: "https://communitech.ca/technews/waterloo-students-snag-top-prizes-at-code-design-to-win.html",
@@ -175,8 +167,8 @@ export const data: Item[] = [
     iconName: "communitech.png",
     description: "UX challenge to design an application to help the elderly better engage with their community.",
     bulletPoints: [
-      <>Came in second place with a $1000 prize</>,
-      <>Competed against 25 finalists, out of hundreds of competitors from across Canada</>,
+      "Came in second place with a $1000 prize",
+      "Competed against 25 finalists, out of hundreds of competitors from across Canada",
     ],
     title: "Communitech Design to Win",
     position: "Second Place",
@@ -201,7 +193,7 @@ export const data: Item[] = [
     title: "University of Waterloo",
     position: "Bachelor of Environmental Studies, Joint Honours Urban Planning and Economics Co-op",
     description: "Completed a joint degree at the University of Waterloo, with several co-op work terms",
-    bulletPoints: [<>President of UW Film Club</>, <>Member of UW Quizbowl competitive trivia team</>],
+    bulletPoints: ["President of UW Film Club", "Member of UW Quizbowl competitive trivia team"],
     endDate: "2018-12-01",
     startDate: "2013-09-01",
   },
