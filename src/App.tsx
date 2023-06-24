@@ -10,8 +10,8 @@ const defaultView: ItemType[] = ["work", "award", "project", "education"];
 
 const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
   work: { label: "Work Experience", icon: <IconBriefcase size={iconSize} /> },
-  project: { label: "Personal Projects", icon: <IconTools size={iconSize} /> },
   award: { label: "Awards", icon: <IconTrophy size={iconSize} /> },
+  project: { label: "Personal Projects", icon: <IconTools size={iconSize} /> },
   education: { label: "Education", icon: <IconSchool size={iconSize} /> },
 };
 

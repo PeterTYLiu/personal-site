@@ -54,7 +54,7 @@ export default function ItemCard({
   return (
     <div className={`${styles.wrapper} ${hidden && styles.hidden} ${className}`} hidden={hidden}>
       <div className={styles.icon}>
-        <img src={`./images/icons/${iconName}`} width="40" height="40" loading="lazy" />
+        <img src={`./images/icons/${iconName}`} loading="lazy" />
       </div>
       <article className={`${styles.article}`} id={key}>
         <header className={styles.header}>
