@@ -6,7 +6,7 @@ import { IconBriefcase, IconSchool, IconTools, IconTrophy } from "@tabler/icons-
 
 const iconSize = 20;
 
-const defaultView: ItemType[] = ["work", "award", "project", "education"];
+const allItems: ItemType[] = ["work", "award", "project", "education"];
 
 const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
   work: { label: "Work Experience", icon: <IconBriefcase size={iconSize} /> },
@@ -16,8 +16,15 @@ const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
 };
 
 function App() {
-  const [view, setView] = useState<ItemType[]>(defaultView);
+  const [view, setView] = useState<ItemType[]>(allItems);
   const timelineRef = useRef<HTMLDivElement | null>(null);
+
+  function scrollToTopOfTimeline() {
+    const DOMRect = timelineRef.current?.getBoundingClientRect();
+    if (DOMRect && DOMRect.top < 0) {
+      timelineRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <main className={styles.main}>
@@ -74,8 +81,8 @@ function App() {
           <button
             className={`${view.length > 1 ? styles.active : ""} ${styles.all}`}
             onClick={() => {
-              setView([...defaultView]);
-              timelineRef.current?.scrollIntoView({ behavior: "smooth" });
+              setView([...allItems]);
+              scrollToTopOfTimeline();
             }}
           >
             <span>Everything</span>
@@ -86,7 +93,7 @@ function App() {
                 key={key}
                 className={`${view.includes(key as ItemType) && view.length === 1 ? styles.active : ""} ${styles[key]}`}
                 onClick={() => {
-                  timelineRef.current?.scrollIntoView({ behavior: "smooth" });
+                  scrollToTopOfTimeline();
                   setView([key as ItemType]);
                 }}
               >
