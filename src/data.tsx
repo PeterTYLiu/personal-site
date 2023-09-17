@@ -2,10 +2,23 @@ import type { Item } from "./components/ItemCard/ItemCard";
 
 export const data: Item[] = [
   {
+    key: "leaptools",
+    type: "work",
+    iconName: "leaptools.jpeg",
+    endDate: "present",
+    startDate: "2023-08-28",
+    title: "Leap Tools",
+    location: "Toronto",
+    position: "Software Developer",
+    description: "Working on industry-leading room-visualization technology.",
+    siteUrl: "https://leaptools.com",
+    tools: ["TypeScript", "React", "Figma", "MUI", "Gitlab"],
+  },
+  {
     key: "sortabase",
     type: "work",
     iconName: "sortabase.png",
-    description: "Working full-time with my cofounder on a collaborative, visual database-building platform for communities",
+    description: "Sortabase is a collaborative, visual database-building platform for communities",
     bulletPoints: [
       "Working on every part of the product stack, from strategy to design to frontend to backend to devops",
       "After a pivot, our current product has hundreds of users and thousands of posts across dozens of community-built databases",

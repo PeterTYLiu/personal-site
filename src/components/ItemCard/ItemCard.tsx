@@ -11,7 +11,7 @@ export interface Item {
   position?: string;
   title: string;
   location?: string;
-  description: string;
+  description?: string;
   bulletPoints?: ReactNode[];
   siteUrl?: string;
   repoUrl?: string;
@@ -82,7 +82,7 @@ export default function ItemCard({
             )}
           </h2>
 
-          <p>{description}</p>
+          {description && <p>{description}</p>}
           {!!bulletPoints?.length && (
             <ul className={styles.list}>
               {bulletPoints?.map((b) => (
