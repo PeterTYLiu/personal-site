@@ -12,7 +12,7 @@ export const data: Item[] = [
     position: "Software Developer",
     description: "Working on industry-leading room-visualization technology.",
     siteUrl: "https://leaptools.com",
-    tools: ["TypeScript", "React", "Redux", "Figma", "MUI", "Gitlab"],
+    tools: ["TypeScript", "React", "Redux", "Figma", "MUI", "Gitlab", "Jest", "React Testing Library"],
   },
   {
     key: "sortabase",
