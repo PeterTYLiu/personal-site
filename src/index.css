@@ -9,6 +9,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --background: #f0f0f0;
 }
 
 html,
@@ -26,7 +28,7 @@ a {
 
 ul {
   margin: 0;
-  padding-inline-start: 24px;
+  padding-inline-start: 16px;
 }
 
 li:not(:last-child) {

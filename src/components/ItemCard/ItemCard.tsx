@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { IconBriefcase, IconTools, IconSchool, IconTrophy, IconBrandGithub, IconBrandFigma, IconWorld } from "@tabler/icons-react";
-import styles from "./ItemCard.module.scss";
+import styles from "./ItemCard.module.css";
 
 export type ItemType = "work" | "project" | "award" | "education";
 
@@ -32,7 +32,7 @@ const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
   award: { label: "Award", icon: <IconTrophy size={iconSize} /> },
   education: { label: "Education", icon: <IconSchool size={iconSize} /> },
   project: { label: "Personal Project", icon: <IconTools size={iconSize} /> },
-  work: { label: "Work Experience", icon: <IconBriefcase size={iconSize} /> },
+  work: { label: "Work", icon: <IconBriefcase size={iconSize} /> },
 };
 
 export default function ItemCard({

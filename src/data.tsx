@@ -10,9 +10,12 @@ export const data: Item[] = [
     title: "Leap Tools",
     location: "Toronto",
     position: "Software Developer",
-    description: "Working on industry-leading room-visualization technology.",
+    bulletPoints: [
+      "Lead developer on initiative to build and implement new design system, bridging design and engineering teams",
+      "Enforce best practices on frontend team with focus on design consistency, code quality, and accessibility",
+    ],
     siteUrl: "https://leaptools.com",
-    tools: ["TypeScript", "React", "Redux", "Figma", "MUI", "Gitlab", "Jest", "React Testing Library"],
+    tools: ["TypeScript", "React", "Redux", "Figma", "MUI", "Gitlab", "Jest", "React Testing Library", "Django"],
   },
   {
     key: "sortabase",
@@ -143,7 +146,7 @@ export const data: Item[] = [
     description: "3D modelling tool that outputs pure HTML and CSS. Includes a node-based scene graph with property inheritence.",
     endDate: "2023-05-01",
     title: "Toaster",
-    bulletPoints: ["Reached front page of Hacker News", "200+ stars on Github"],
+    bulletPoints: ["Reached front page of Hacker News", "250+ stars on Github"],
     siteUrl: "https://petertyliu.github.io/toaster/",
     repoUrl: "https://github.com/PeterTYLiu/toaster",
     tools: ["Vite", "SASS", "TypeScript", "React", "Github Pages"],
