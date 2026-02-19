@@ -2,7 +2,7 @@ import type { Item } from "./components/ItemCard/ItemCard";
 
 export const data: Item[] = [
   {
-    key: "leaptools",
+    key: "leaptools2",
     type: "work",
     iconName: "leaptools.jpeg",
     endDate: "2025-11-05",
@@ -65,7 +65,7 @@ export const data: Item[] = [
       "Working on every part of the product stack, from strategy to design to frontend to backend to devops",
       "After a pivot, our current product has hundreds of users and thousands of posts across dozens of community-built databases",
     ],
-    endDate: "present",
+    endDate: "2023-05-01",
     startDate: "2021-11-01",
     title: "Sortabase",
     location: "Toronto",
@@ -205,6 +205,17 @@ export const data: Item[] = [
       "https://www.facebook.com/ucgreenhouse/photos/t.100000728044944/1451231404952074",
   },
   {
+    key: "mui-themer",
+    type: "project",
+    iconName: "mui.png",
+    description: "Theme builder + generator for MUI",
+    endDate: "2026-02-01",
+    title: "MUI Theme Builder",
+    siteUrl: "https://petertyliu.github.io/mui-theme-builder/",
+    repoUrl: "https://github.com/PeterTYLiu/mui-theme-builder",
+    tools: ["Vite", "MUI", "TypeScript", "React"],
+  },
+  {
     key: "toaster",
     type: "project",
     iconName: "toaster.png",
@@ -215,7 +226,7 @@ export const data: Item[] = [
     bulletPoints: ["Reached front page of Hacker News", "250+ stars on Github"],
     siteUrl: "https://petertyliu.github.io/toaster/",
     repoUrl: "https://github.com/PeterTYLiu/toaster",
-    tools: ["Vite", "SASS", "TypeScript", "React", "Github Pages"],
+    tools: ["Vite", "SASS", "TypeScript", "React"],
   },
   {
     key: "xmorphic.dev",
@@ -227,7 +238,7 @@ export const data: Item[] = [
     title: "𝑥morphic.dev",
     siteUrl: "https://xmorphic.dev",
     repoUrl: "https://github.com/PeterTYLiu/xmorphic",
-    tools: ["Vite", "SASS", "TypeScript", "React", "Github Pages"],
+    tools: ["Vite", "SASS", "TypeScript", "React"],
   },
   {
     key: "design-to-win-2019",
