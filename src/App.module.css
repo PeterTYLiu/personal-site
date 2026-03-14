@@ -3,15 +3,15 @@
   align-self: flex-start;
   font-size: 15px;
   flex-shrink: 0;
+  color: white;
+  padding: 32px;
 
   > *:not(:last-child) {
     margin-bottom: 18px;
   }
   a {
-    color: red;
-    &:hover {
-      text-decoration: underline;
-    }
+    color: white;
+    text-decoration: dotted underline white 1px;
   }
   @media screen and (max-width: 850px) {
     align-self: auto;
@@ -21,13 +21,13 @@
 
 .controls {
   display: flex;
-  padding-bottom: 20px;
-  gap: 6px;
+  gap: 2px;
   flex-wrap: wrap;
+  border-bottom: 3px solid var(--black);
   > button {
-    border: 1px solid var(--theme);
-    color: var(--theme);
-    padding: 5px 14px;
+    font-family: aleo;
+    padding: 5px 10px;
+    border: none;
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -36,39 +36,28 @@
     transition: all 0.2s;
     font-size: 14px;
     background-color: white;
+    transition: font-weight 0.3s;
+    cursor: pointer;
     &:hover {
-      background-color: color-mix(in srgb, var(--theme) 12%, white);
+      font-weight: 700;
     }
     &.active {
       color: white;
-      background-color: var(--theme);
+      background-color: var(--black);
+      font-weight: 700;
     }
   }
   @media screen and (max-width: 850px) {
     position: sticky;
     top: 0;
     z-index: 99;
-    background: var(--background);
-    padding-top: 16px;
+    background: var(--black);
   }
 }
 
 .items {
   position: relative;
   margin-bottom: 32px;
-  &:before {
-    content: "";
-    position: absolute;
-    background: #00000015;
-    top: 0;
-    bottom: 0;
-    left: 16px;
-    width: 8px;
-    border-radius: 99px;
-  }
-  &:has(:last-child[hidden]):before {
-    bottom: 12px;
-  }
 }
 
 .items-wrapper {
@@ -80,42 +69,24 @@
   display: flex;
   height: 100vh;
   height: 100dvh;
-  gap: 60px;
-  padding: 40px 40px 0px;
+  gap: 24px;
   justify-content: center;
   align-items: stretch;
-  background-color: var(--background);
+  background-color: var(--black);
   @media screen and (max-width: 850px) {
     flex-direction: column;
     height: auto;
     align-items: center;
-    padding: 42px 20px 0px;
     gap: 24px;
   }
 }
 
 .timeline {
-  width: 460px;
+  width: 560px;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 850px) {
     align-self: auto;
     width: min(500px, 100%);
   }
-}
-
-.all {
-  --theme: rgb(255, 98, 98);
-}
-.education {
-  --theme: green;
-}
-.work {
-  --theme: blue;
-}
-.project {
-  --theme: purple;
-}
-.award {
-  --theme: rgb(234, 148, 0);
 }

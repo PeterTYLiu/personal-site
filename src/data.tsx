@@ -14,7 +14,7 @@ export const data: Item[] = [
       "Leading team of three to apply component library and enforce front-of-frontend best practices across multiple engineering teams",
       "Ensure ADA-compliant accessibility for features used on Home Depot, Redfin, etc. public websites",
     ],
-    siteUrl: "https://leaptools.com",
+    siteUrl: "https://roomvo.com",
     tools: [
       "TypeScript",
       "React",
@@ -83,6 +83,7 @@ export const data: Item[] = [
       "Ant Design",
       "Sendgrid",
       "Auth0",
+      "Zod",
     ],
   },
   {
@@ -208,9 +209,14 @@ export const data: Item[] = [
     key: "mui-themer",
     type: "project",
     iconName: "mui.png",
-    description: "Theme builder + generator for MUI",
+    description:
+      "Open source generator/editor for modern, accessible MUI themes",
     endDate: "2026-02-01",
     title: "MUI Theme Builder",
+    bulletPoints: [
+      "Included as part of official MUI documentation",
+      "Thousands of monthly users",
+    ],
     siteUrl: "https://petertyliu.github.io/mui-theme-builder/",
     repoUrl: "https://github.com/PeterTYLiu/mui-theme-builder",
     tools: ["Vite", "MUI", "TypeScript", "React"],

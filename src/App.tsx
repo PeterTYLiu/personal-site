@@ -16,7 +16,7 @@ const allItems: ItemType[] = ["work", "award", "project", "education"];
 const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
   work: { label: "Work", icon: <IconBriefcase size={iconSize} /> },
   award: { label: "Awards", icon: <IconTrophy size={iconSize} /> },
-  project: { label: "Personal Projects", icon: <IconTools size={iconSize} /> },
+  project: { label: "Projects", icon: <IconTools size={iconSize} /> },
   education: { label: "Education", icon: <IconSchool size={iconSize} /> },
 };
 
@@ -34,10 +34,10 @@ function App() {
   return (
     <main className={styles.main}>
       <div className={styles.about}>
-        <p>
-          Hi! I'm <strong>Peter Liu</strong>, a full-stack web developer and UI
-          designer living in beautiful Toronto, Canada.
-        </p>
+        <h1>Peter Liu</h1>
+        <h2 style={{ fontWeight: 400, fontSize: "18px" }}>
+          Full-stack web dev & designer living in beautiful Toronto, Canada.
+        </h2>
         <p>
           At <strong>Leap Tools</strong>, I led a design systems team, used by
           dozens of developers, and customized by hundred of clients, including
@@ -97,23 +97,11 @@ function App() {
           </a>
           .
         </p>
-        <hr />
-        <p>
-          Get in touch at{" "}
-          <a href="mailto:peterbuildsstuff@gmail.com">
-            PeterBuildsStuff@gmail.com
-          </a>
-          . Also check out my <a href="https://github.com/PeterTYLiu">Github</a>{" "}
-          and{" "}
-          <a
-            href="https://www.linkedin.com/in/peter-ty-liu/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>{" "}
-          pages.
-        </p>
+        <div>
+          <button>Email</button>
+          <button>Github</button>
+          <button>LinkedIn</button>
+        </div>
       </div>
       <div className={styles.timeline} ref={timelineRef}>
         <div className={styles.controls}>
@@ -124,7 +112,7 @@ function App() {
               scrollToTopOfTimeline();
             }}
           >
-            <span>Everything</span>
+            <span>All</span>
           </button>
           {Object.entries(itemTypeDict).map(([key, value]) => {
             return (
@@ -140,7 +128,6 @@ function App() {
                   setView([key as ItemType]);
                 }}
               >
-                {value.icon}
                 <span>{value.label}</span>
               </button>
             );

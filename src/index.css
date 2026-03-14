@@ -10,12 +10,13 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --background: #f0f0f0;
+  --black: #232323;
 }
 
 html,
 body {
   margin: 0;
+  background-color: var(--black);
 }
 
 a {
@@ -43,4 +44,14 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: aleo;
 }
