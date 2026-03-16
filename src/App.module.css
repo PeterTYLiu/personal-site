@@ -65,6 +65,20 @@
   flex: 1;
 }
 
+.links {
+  a {
+    display: inline-block;
+    margin-inline-end: 4px;
+    height: 32px;
+    width: 32px;
+    display: inline-grid;
+    place-items: center;
+    &:focus-visible {
+      outline: 2px solid white;
+    }
+  }
+}
+
 .main {
   display: flex;
   height: 100vh;
@@ -82,7 +96,7 @@
 }
 
 .timeline {
-  width: 560px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 850px) {

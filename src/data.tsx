@@ -69,7 +69,7 @@ export const data: Item[] = [
     startDate: "2021-11-01",
     title: "Sortabase",
     location: "Toronto",
-    position: "Cofounder, Full-Stack Engineer",
+    position: "Cofounder & Full-Stack Engineer",
     siteUrl: "https://sortabase.com",
     tools: [
       "Next.js",

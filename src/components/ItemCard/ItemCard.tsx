@@ -98,7 +98,7 @@ export default function ItemCard({
             {title}
             {!!position && (
               <span className={styles.position}>
-                <span>&nbsp;|&nbsp;</span>
+                <span>&nbsp;/&nbsp;</span>
                 {position}
               </span>
             )}

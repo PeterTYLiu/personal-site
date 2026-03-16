@@ -1,5 +1,9 @@
 import {
+  IconBrandGithub,
+  IconBrandLinkedin,
   IconBriefcase,
+  IconFileCv,
+  IconMail,
   IconSchool,
   IconTools,
   IconTrophy,
@@ -36,7 +40,7 @@ function App() {
       <div className={styles.about}>
         <h1>Peter Liu</h1>
         <h2 style={{ fontWeight: 400, fontSize: "18px" }}>
-          Full-stack web dev & designer living in beautiful Toronto, Canada.
+          Full-stack web dev & designer living in beautiful Toronto, Canada
         </h2>
         <p>
           At <strong>Leap Tools</strong>, I led a design systems team, used by
@@ -97,10 +101,19 @@ function App() {
           </a>
           .
         </p>
-        <div>
-          <button>Email</button>
-          <button>Github</button>
-          <button>LinkedIn</button>
+        <div className={styles.links}>
+          <a href="mailto:PeterBuildsStuff@gmail.com">
+            <IconMail />
+          </a>
+          <a href="https://github.com/PeterTYLiu" target="_blank">
+            <IconBrandGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/peter-ty-liu" target="_blank">
+            <IconBrandLinkedin />
+          </a>
+          <a href="/peter-liu-resume.pdf">
+            <IconFileCv />
+          </a>
         </div>
       </div>
       <div className={styles.timeline} ref={timelineRef}>
