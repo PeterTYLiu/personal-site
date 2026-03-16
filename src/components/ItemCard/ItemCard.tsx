@@ -8,26 +8,8 @@ import {
   IconWorld,
 } from "@tabler/icons-react";
 import type { ReactNode } from "react";
+import type { Item, ItemType } from "../../types";
 import styles from "./ItemCard.module.css";
-
-export type ItemType = "work" | "project" | "award" | "education";
-
-export interface Item {
-  key: string;
-  type: ItemType;
-  iconName: string;
-  position?: string;
-  title: string;
-  location?: string;
-  description?: string;
-  bulletPoints?: ReactNode[];
-  siteUrl?: string;
-  repoUrl?: string;
-  figmaUrl?: string;
-  tools?: string[];
-  startDate?: string;
-  endDate: string;
-}
 
 const iconSize = 18;
 const linkIconSize = 16;

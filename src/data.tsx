@@ -1,4 +1,4 @@
-import type { Item } from "./components/ItemCard/ItemCard";
+import type { Item } from "./types";
 
 export const data: Item[] = [
   {
@@ -30,6 +30,7 @@ export const data: Item[] = [
       "Django",
       "Next.js",
     ],
+    tags: ["ds", "senior", "startup"],
   },
   {
     key: "leaptools",
@@ -56,6 +57,7 @@ export const data: Item[] = [
       "React Testing Library",
       "Django",
     ],
+    tags: ["ds", "startup"],
   },
   {
     key: "sortabase",
@@ -73,6 +75,7 @@ export const data: Item[] = [
     location: "Toronto",
     position: "Cofounder & Full-Stack Engineer",
     siteUrl: "https://sortabase.com",
+    tags: ["ds", "senior", "startup"],
     tools: [
       "Next.js",
       "Vercel",
@@ -134,7 +137,9 @@ export const data: Item[] = [
     figmaUrl:
       "https://www.figma.com/community/file/1027317639278516141/Threekit-React-Dev-Kit-Design-System",
     tools: ["React", "Figma", "Illustrator", "Sketchup", "Storybook"],
+    tags: ["ds", "startup"],
   },
+
   {
     key: "threekit-ux-designer",
     type: "work",
@@ -153,6 +158,7 @@ export const data: Item[] = [
     position: "UX Designer",
     siteUrl: "https://threekit.com",
     tools: ["Figma", "Gitlab", "Jira"],
+    tags: ["startup"],
   },
   {
     key: "fairventures",
@@ -176,7 +182,7 @@ export const data: Item[] = [
     type: "work",
     iconName: "clearspider.png",
     description:
-      "Co-op position at ClearSpider, redesigning their complete inventory management platform",
+      "Co-op position at ClearSpider, redesigning their complete inventory management platform from scratch",
     endDate: "2017-08-31",
     startDate: "2017-05-01",
     title: "ClearSpider",
@@ -184,6 +190,7 @@ export const data: Item[] = [
     position: "UX Designer",
     siteUrl: "https://www.clearspider.net/",
     tools: ["Adobe XD", "Adobe Illustrator", "User interviews", "Wireframing"],
+    tags: ["ds"],
   },
   {
     key: "threekit-ux-award",
@@ -222,6 +229,7 @@ export const data: Item[] = [
     siteUrl: "https://petertyliu.github.io/mui-theme-builder/",
     repoUrl: "https://github.com/PeterTYLiu/mui-theme-builder",
     tools: ["Vite", "MUI", "TypeScript", "React"],
+    tags: ["ds", "gsp"],
   },
   {
     key: "toaster",
@@ -235,6 +243,7 @@ export const data: Item[] = [
     siteUrl: "https://petertyliu.github.io/toaster/",
     repoUrl: "https://github.com/PeterTYLiu/toaster",
     tools: ["Vite", "SASS", "TypeScript", "React"],
+    tags: ["gsp"],
   },
   {
     key: "xmorphic.dev",

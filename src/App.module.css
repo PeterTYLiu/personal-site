@@ -98,6 +98,10 @@
   }
 }
 
+.shortcuts {
+  border: 1px solid white;
+}
+
 .timeline {
   width: 600px;
   display: flex;

@@ -1,38 +1,47 @@
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBriefcase,
   IconFileCv,
   IconMail,
-  IconSchool,
-  IconTools,
-  IconTrophy,
 } from "@tabler/icons-react";
-import { type ReactNode, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./App.module.css";
-import ItemCard, { type ItemType } from "./components/ItemCard/ItemCard";
+import ItemCard from "./components/ItemCard/ItemCard";
+import { ShortcutButton } from "./components/ShortcutButton/ShortcutButton";
 import { data } from "./data";
+import type { ItemType, Tag } from "./types";
 
-const iconSize = 20;
+const ALL_ITEMS: ItemType[] = ["work", "award", "project", "education"];
 
-const allItems: ItemType[] = ["work", "award", "project", "education"];
+const SHORTCUTS: Array<[string, Tag]> = [
+  ["My experience as a senior/founding engineer", "senior"],
+  ["My work building design systems", "ds"],
+  ["My stints at high-velocity startups", "startup"],
+  ["My popular side projects", "gsp"],
+];
 
-const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
-  work: { label: "Work", icon: <IconBriefcase size={iconSize} /> },
-  award: { label: "Awards", icon: <IconTrophy size={iconSize} /> },
-  project: { label: "Projects", icon: <IconTools size={iconSize} /> },
-  education: { label: "Education", icon: <IconSchool size={iconSize} /> },
+const itemTypeDict: Record<ItemType, { label: string }> = {
+  work: { label: "Work" },
+  award: { label: "Awards" },
+  project: { label: "Projects" },
+  education: { label: "Education" },
 };
 
 function App() {
-  const [view, setView] = useState<ItemType[]>(allItems);
-  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const [view, setView] = useState<ItemType[]>(ALL_ITEMS);
+  const [tag, setTag] = useState<Tag | null>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const timelineControlsRef = useRef<HTMLDivElement>(null);
 
   function scrollToTopOfTimeline() {
     const DOMRect = timelineRef.current?.getBoundingClientRect();
     if (DOMRect && DOMRect.top < 0) {
       timelineRef.current?.scrollIntoView({ behavior: "smooth" });
     }
+  }
+
+  function scrollTimelineToTopOfPage() {
+    timelineControlsRef.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -45,12 +54,26 @@ function App() {
         <p>
           I know you're busy - let's quickly jump to what you're looking for!
         </p>
-        <ul>
-          <li>My experience as a senior/founding developer</li>
-          <li>My work building design systems</li>
-          <li>My many stints at high-velocity startups</li>
-          <li>My high-traffic side projects</li>
-        </ul>
+        <div className={styles.shortcuts}>
+          {SHORTCUTS.map((shortcut) => (
+            <ShortcutButton
+              isSelected={tag === shortcut[1]}
+              onClick={() =>
+                setTag((prev) => {
+                  if (prev === shortcut[1]) {
+                    return null;
+                  } else {
+                    setView(ALL_ITEMS);
+                    scrollToTopOfTimeline();
+                    scrollTimelineToTopOfPage();
+                    return shortcut[1];
+                  }
+                })
+              }
+              text={shortcut[0]}
+            />
+          ))}
+        </div>
         <div className={styles.links}>
           <a href="mailto:PeterBuildsStuff@gmail.com" aria-label="Email me">
             <IconMail />
@@ -75,12 +98,13 @@ function App() {
         </div>
       </div>
       <div className={styles.timeline} ref={timelineRef}>
-        <div className={styles.controls}>
+        <div className={styles.controls} ref={timelineControlsRef}>
           <button
             className={`${view.length > 1 ? styles.active : ""} ${styles.all}`}
             onClick={() => {
-              setView([...allItems]);
+              setView([...ALL_ITEMS]);
               scrollToTopOfTimeline();
+              setTag(null);
             }}
           >
             <span>All</span>
@@ -89,14 +113,15 @@ function App() {
             return (
               <button
                 key={key}
-                className={`${
+                className={
                   view.includes(key as ItemType) && view.length === 1
                     ? styles.active
-                    : ""
-                } ${styles[key]}`}
+                    : undefined
+                }
                 onClick={() => {
                   scrollToTopOfTimeline();
                   setView([key as ItemType]);
+                  setTag(null);
                 }}
               >
                 <span>{value.label}</span>
@@ -112,7 +137,10 @@ function App() {
                 <ItemCard
                   item={i}
                   key={i.key}
-                  hidden={!view.includes(i.type)}
+                  hidden={
+                    !view.includes(i.type) ||
+                    (tag !== null && !i.tags?.includes(tag))
+                  }
                   showType={view.length > 1}
                   className={styles[i.type]}
                 />
