@@ -1,4 +1,4 @@
-import type { Item } from "./components/ItemCard/ItemCard";
+import type { Item } from "./types";
 
 export const data: Item[] = [
   {
@@ -11,10 +11,12 @@ export const data: Item[] = [
     location: "Toronto",
     position: "Senior Software Developer & Team Lead",
     bulletPoints: [
-      "Leading team of three to apply component library and enforce front-of-frontend best practices across multiple engineering teams",
-      "Ensure ADA-compliant accessibility for features used on Home Depot, Redfin, etc. public websites",
+      "Led a Design System Team maintaining a React component library for an AI room visualizer (Roomvo) with millions of daily users",
+      "Ensured ADA-compliant accessibility to enable deployments on Home Depot, Redfin, Costco, et. al. websites",
+      "Built complex, AI-driven frontend features using modern TypeScript, React, and Next.js, with excellent test coverage",
+      "Created high-fidelity mockups for new features/components in Figma",
     ],
-    siteUrl: "https://leaptools.com",
+    siteUrl: "https://roomvo.com",
     tools: [
       "TypeScript",
       "React",
@@ -28,6 +30,7 @@ export const data: Item[] = [
       "Django",
       "Next.js",
     ],
+    tags: ["ds", "senior", "startup"],
   },
   {
     key: "leaptools",
@@ -39,8 +42,8 @@ export const data: Item[] = [
     location: "Toronto",
     position: "Software Developer",
     bulletPoints: [
-      "Lead developer on initiative to build and implement new design system, bridging design and engineering teams",
-      "Enforce best practices on frontend team with focus on design consistency, code quality, and accessibility",
+      "Built a ground-up design system for our React frontend, with focus on a11y, i18n, & customizability",
+      "Rewrote many parts of our flagship app (Roomvo) from Polymer to React, TypeScript, Next.js, and Redux, while maintaining uptime for millions of daily users",
     ],
     siteUrl: "https://leaptools.com",
     tools: [
@@ -54,6 +57,7 @@ export const data: Item[] = [
       "React Testing Library",
       "Django",
     ],
+    tags: ["ds", "startup"],
   },
   {
     key: "sortabase",
@@ -69,8 +73,9 @@ export const data: Item[] = [
     startDate: "2021-11-01",
     title: "Sortabase",
     location: "Toronto",
-    position: "Cofounder, Full-Stack Engineer",
+    position: "Cofounder & Full-Stack Engineer",
     siteUrl: "https://sortabase.com",
+    tags: ["ds", "senior", "startup"],
     tools: [
       "Next.js",
       "Vercel",
@@ -83,6 +88,7 @@ export const data: Item[] = [
       "Ant Design",
       "Sendgrid",
       "Auth0",
+      "Zod",
     ],
   },
   {
@@ -131,7 +137,9 @@ export const data: Item[] = [
     figmaUrl:
       "https://www.figma.com/community/file/1027317639278516141/Threekit-React-Dev-Kit-Design-System",
     tools: ["React", "Figma", "Illustrator", "Sketchup", "Storybook"],
+    tags: ["ds", "startup"],
   },
+
   {
     key: "threekit-ux-designer",
     type: "work",
@@ -150,6 +158,7 @@ export const data: Item[] = [
     position: "UX Designer",
     siteUrl: "https://threekit.com",
     tools: ["Figma", "Gitlab", "Jira"],
+    tags: ["startup"],
   },
   {
     key: "fairventures",
@@ -173,7 +182,7 @@ export const data: Item[] = [
     type: "work",
     iconName: "clearspider.png",
     description:
-      "Co-op position at ClearSpider, redesigning their complete inventory management platform",
+      "Co-op position at ClearSpider, redesigning their complete inventory management platform from scratch",
     endDate: "2017-08-31",
     startDate: "2017-05-01",
     title: "ClearSpider",
@@ -181,6 +190,7 @@ export const data: Item[] = [
     position: "UX Designer",
     siteUrl: "https://www.clearspider.net/",
     tools: ["Adobe XD", "Adobe Illustrator", "User interviews", "Wireframing"],
+    tags: ["ds"],
   },
   {
     key: "threekit-ux-award",
@@ -208,12 +218,18 @@ export const data: Item[] = [
     key: "mui-themer",
     type: "project",
     iconName: "mui.png",
-    description: "Theme builder + generator for MUI",
+    description:
+      "Open source generator/editor for modern, accessible MUI themes",
     endDate: "2026-02-01",
     title: "MUI Theme Builder",
+    bulletPoints: [
+      "Included as part of official MUI documentation",
+      "Thousands of monthly users",
+    ],
     siteUrl: "https://petertyliu.github.io/mui-theme-builder/",
     repoUrl: "https://github.com/PeterTYLiu/mui-theme-builder",
     tools: ["Vite", "MUI", "TypeScript", "React"],
+    tags: ["ds", "gsp"],
   },
   {
     key: "toaster",
@@ -227,6 +243,7 @@ export const data: Item[] = [
     siteUrl: "https://petertyliu.github.io/toaster/",
     repoUrl: "https://github.com/PeterTYLiu/toaster",
     tools: ["Vite", "SASS", "TypeScript", "React"],
+    tags: ["gsp"],
   },
   {
     key: "xmorphic.dev",

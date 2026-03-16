@@ -1,28 +1,37 @@
 import {
-  IconBriefcase,
-  IconSchool,
-  IconTools,
-  IconTrophy,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconFileCv,
+  IconMail,
 } from "@tabler/icons-react";
-import { type ReactNode, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./App.module.css";
-import ItemCard, { type ItemType } from "./components/ItemCard/ItemCard";
+import ItemCard from "./components/ItemCard/ItemCard";
+import { ShortcutButton } from "./components/ShortcutButton/ShortcutButton";
 import { data } from "./data";
+import type { ItemType, Tag } from "./types";
 
-const iconSize = 20;
+const ALL_ITEMS: ItemType[] = ["work", "award", "project", "education"];
 
-const allItems: ItemType[] = ["work", "award", "project", "education"];
+const SHORTCUTS: Array<[string, Tag]> = [
+  ["My experience as a senior/founding engineer", "senior"],
+  ["My work building design systems", "ds"],
+  ["My stints at high-velocity startups", "startup"],
+  ["My popular side projects", "gsp"],
+];
 
-const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
-  work: { label: "Work", icon: <IconBriefcase size={iconSize} /> },
-  award: { label: "Awards", icon: <IconTrophy size={iconSize} /> },
-  project: { label: "Personal Projects", icon: <IconTools size={iconSize} /> },
-  education: { label: "Education", icon: <IconSchool size={iconSize} /> },
+const itemTypeDict: Record<ItemType, { label: string }> = {
+  work: { label: "Work" },
+  award: { label: "Awards" },
+  project: { label: "Projects" },
+  education: { label: "Education" },
 };
 
 function App() {
-  const [view, setView] = useState<ItemType[]>(allItems);
-  const timelineRef = useRef<HTMLDivElement | null>(null);
+  const [view, setView] = useState<ItemType[]>(ALL_ITEMS);
+  const [tag, setTag] = useState<Tag | null>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const timelineControlsRef = useRef<HTMLDivElement>(null);
 
   function scrollToTopOfTimeline() {
     const DOMRect = timelineRef.current?.getBoundingClientRect();
@@ -31,116 +40,90 @@ function App() {
     }
   }
 
+  function scrollTimelineToTopOfPage() {
+    timelineControlsRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.about}>
+        <h1>Peter Liu</h1>
+        <h2 style={{ fontWeight: 400, fontSize: "18px" }}>
+          Full-stack web dev & designer living in beautiful Toronto, Canada
+        </h2>
         <p>
-          Hi! I'm <strong>Peter Liu</strong>, a full-stack web developer and UI
-          designer living in beautiful Toronto, Canada.
+          I know you're busy - let's quickly jump to what you're looking for!
         </p>
-        <p>
-          At <strong>Leap Tools</strong>, I led a design systems team, used by
-          dozens of developers, and customized by hundred of clients, including
-          Home Depot, Costco, and Redfin.
-        </p>
-        <p>
-          As a UX consultant, I've worked with clients including Samsung and
-          Crate & Barrel to design custom 3D/AR shopping experiences.
-        </p>
-        <p>
-          At Threekit, I worked closely with engineering to design their{" "}
-          <a
-            href="https://www.threekit.com/en/platform-overview"
-            target="_blank"
-            rel="noreferrer"
-          >
-            3D rendering interface
-          </a>{" "}
-          from the ground up, as well as a{" "}
-          <a
-            href="https://developer.threekit.com/reference/treble"
-            target="_blank"
-            rel="noreferrer"
-          >
-            React component library
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://www.figma.com/community/file/1027317639278516141/Threekit-React-Dev-Kit-Design-System"
-            target="_blank"
-            rel="noreferrer"
-          >
-            design system
+        <div className={styles.shortcuts}>
+          {SHORTCUTS.map((shortcut) => (
+            <ShortcutButton
+              isSelected={tag === shortcut[1]}
+              onClick={() =>
+                setTag((prev) => {
+                  if (prev === shortcut[1]) {
+                    return null;
+                  } else {
+                    setView(ALL_ITEMS);
+                    scrollToTopOfTimeline();
+                    scrollTimelineToTopOfPage();
+                    return shortcut[1];
+                  }
+                })
+              }
+              text={shortcut[0]}
+            />
+          ))}
+        </div>
+        <div className={styles.links}>
+          <a href="mailto:PeterBuildsStuff@gmail.com" aria-label="Email me">
+            <IconMail />
           </a>
-          .
-        </p>
-        <p>
-          My side projects have reached the{" "}
           <a
-            href="https://news.ycombinator.com/item?id=36019354"
+            href="https://github.com/PeterTYLiu"
             target="_blank"
-            rel="noreferrer"
+            aria-label="My Github"
           >
-            front page of Hacker News
-          </a>{" "}
-          and{" "}
+            <IconBrandGithub />
+          </a>
           <a
-            href="https://www.reddit.com/r/webdev/comments/13nc54m/i_made_a_3d_editor_that_models_in_pure_csshtml/"
+            href="https://www.linkedin.com/in/peter-ty-liu"
             target="_blank"
-            rel="noreferrer"
+            aria-label="My LinkedIn"
           >
-            blown up on Reddit
+            <IconBrandLinkedin />
           </a>
-          . I love TypeScript, cutting-edge CSS, and{" "}
-          <a href="https://css-tricks.com/using-the-platform/">
-            using the platform
+          <a href="/peter-liu-resume.pdf" aria-label="My résumé">
+            <IconFileCv />
           </a>
-          .
-        </p>
-        <hr />
-        <p>
-          Get in touch at{" "}
-          <a href="mailto:peterbuildsstuff@gmail.com">
-            PeterBuildsStuff@gmail.com
-          </a>
-          . Also check out my <a href="https://github.com/PeterTYLiu">Github</a>{" "}
-          and{" "}
-          <a
-            href="https://www.linkedin.com/in/peter-ty-liu/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>{" "}
-          pages.
-        </p>
+        </div>
       </div>
       <div className={styles.timeline} ref={timelineRef}>
-        <div className={styles.controls}>
+        <div className={styles.controls} ref={timelineControlsRef}>
           <button
             className={`${view.length > 1 ? styles.active : ""} ${styles.all}`}
             onClick={() => {
-              setView([...allItems]);
+              setView([...ALL_ITEMS]);
               scrollToTopOfTimeline();
+              setTag(null);
             }}
           >
-            <span>Everything</span>
+            <span>All</span>
           </button>
           {Object.entries(itemTypeDict).map(([key, value]) => {
             return (
               <button
                 key={key}
-                className={`${
+                className={
                   view.includes(key as ItemType) && view.length === 1
                     ? styles.active
-                    : ""
-                } ${styles[key]}`}
+                    : undefined
+                }
                 onClick={() => {
                   scrollToTopOfTimeline();
                   setView([key as ItemType]);
+                  setTag(null);
                 }}
               >
-                {value.icon}
                 <span>{value.label}</span>
               </button>
             );
@@ -154,7 +137,10 @@ function App() {
                 <ItemCard
                   item={i}
                   key={i.key}
-                  hidden={!view.includes(i.type)}
+                  hidden={
+                    !view.includes(i.type) ||
+                    (tag !== null && !i.tags?.includes(tag))
+                  }
                   showType={view.length > 1}
                   className={styles[i.type]}
                 />

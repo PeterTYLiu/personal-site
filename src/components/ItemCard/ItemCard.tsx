@@ -1,31 +1,25 @@
+import {
+  IconBrandFigma,
+  IconBrandGithub,
+  IconBriefcase,
+  IconSchool,
+  IconTools,
+  IconTrophy,
+  IconWorld,
+} from "@tabler/icons-react";
 import type { ReactNode } from "react";
-import { IconBriefcase, IconTools, IconSchool, IconTrophy, IconBrandGithub, IconBrandFigma, IconWorld } from "@tabler/icons-react";
+import type { Item, ItemType } from "../../types";
 import styles from "./ItemCard.module.css";
-
-export type ItemType = "work" | "project" | "award" | "education";
-
-export interface Item {
-  key: string;
-  type: ItemType;
-  iconName: string;
-  position?: string;
-  title: string;
-  location?: string;
-  description?: string;
-  bulletPoints?: ReactNode[];
-  siteUrl?: string;
-  repoUrl?: string;
-  figmaUrl?: string;
-  tools?: string[];
-  startDate?: string;
-  endDate: string;
-}
 
 const iconSize = 18;
 const linkIconSize = 16;
 
 function formatDate(str: string) {
-  return new Date(str).toLocaleDateString("en-ca", { year: "numeric", month: "short", timeZone: "UTC" });
+  return new Date(str).toLocaleDateString("en-ca", {
+    year: "numeric",
+    month: "short",
+    timeZone: "UTC",
+  });
 }
 
 const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
@@ -46,37 +40,47 @@ export default function ItemCard({
   showType: boolean;
   className: string;
 }) {
-  const { title, type, position, startDate, endDate, repoUrl, siteUrl, figmaUrl, description, bulletPoints, key, tools, iconName } = item;
+  const {
+    title,
+    type,
+    position,
+    startDate,
+    endDate,
+    repoUrl,
+    siteUrl,
+    figmaUrl,
+    description,
+    bulletPoints,
+    key,
+    tools,
+    iconName,
+  } = item;
 
   const startDateString = startDate ? formatDate(startDate) : "";
   const endDateString = endDate === "present" ? "present" : formatDate(endDate);
 
   return (
-    <div className={`${styles.wrapper} ${hidden && styles.hidden} ${className}`} hidden={hidden}>
-      <div className={styles.icon}>
-        <img src={`./images/icons/${iconName}`} loading="lazy" />
-      </div>
+    <div
+      className={`${styles.wrapper} ${hidden && styles.hidden} ${className}`}
+      hidden={hidden}
+    >
       <article className={`${styles.article}`} id={key}>
-        <header className={styles.header}>
-          {showType && (
-            <div className={styles.type}>
-              {itemTypeDict[type].icon}
-              <span>{itemTypeDict[type].label}</span>
-            </div>
-          )}
-          <span className={styles.date}>
-            {startDateString}
-            {startDateString && " - "}
-            {endDateString}
-          </span>
-        </header>
-
         <div className={styles.inner}>
+          <div className={styles.date}>
+            <span>
+              {showType && <span>{itemTypeDict[type].label}: </span>}
+              <span className={styles.date}>
+                {startDateString}
+                {startDateString && " to "}
+                {endDateString}
+              </span>
+            </span>
+          </div>
           <h2 className={styles.title}>
             {title}
             {!!position && (
               <span className={styles.position}>
-                <span>&nbsp;|&nbsp;</span>
+                <span>&nbsp;/&nbsp;</span>
                 {position}
               </span>
             )}
@@ -102,7 +106,7 @@ export default function ItemCard({
               {siteUrl && (
                 <a href={siteUrl} target="_blank">
                   <IconWorld size={linkIconSize} />
-                  <span>Site</span>
+                  <span>Visit</span>
                 </a>
               )}
               {repoUrl && (

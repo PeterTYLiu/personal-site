@@ -1,0 +1,33 @@
+.shortcut-button {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 8px;
+  align-items: center;
+  font-family: aleo;
+  font-size: 14px;
+  &:not(:last-of-type) {
+    border-bottom: 1px solid white;
+  }
+  &[aria-pressed="true"] {
+    background-color: white;
+    color: var(--black);
+    &:hover {
+      background-color: color-mix(in srgb, currentColor 10%, white 90%);
+    }
+  }
+  span {
+    text-align: start;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+  &:hover {
+    background-color: color-mix(in srgb, currentColor 10%, transparent 90%);
+  }
+}
