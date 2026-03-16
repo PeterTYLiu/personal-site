@@ -1,18 +1,12 @@
 import {
   IconBrandFigma,
   IconBrandGithub,
-  IconBriefcase,
-  IconSchool,
-  IconTools,
-  IconTrophy,
   IconWorld,
 } from "@tabler/icons-react";
-import type { ReactNode } from "react";
 import type { Item, ItemType } from "../../types";
 import styles from "./ItemCard.module.css";
 
-const iconSize = 18;
-const linkIconSize = 16;
+const LINK_ICON_SIZE = 16;
 
 function formatDate(str: string) {
   return new Date(str).toLocaleDateString("en-ca", {
@@ -22,11 +16,11 @@ function formatDate(str: string) {
   });
 }
 
-const itemTypeDict: Record<ItemType, { label: string; icon: ReactNode }> = {
-  award: { label: "Award", icon: <IconTrophy size={iconSize} /> },
-  education: { label: "Education", icon: <IconSchool size={iconSize} /> },
-  project: { label: "Personal Project", icon: <IconTools size={iconSize} /> },
-  work: { label: "Work", icon: <IconBriefcase size={iconSize} /> },
+const itemTypeDict: Record<ItemType, { label: string }> = {
+  award: { label: "Award" },
+  education: { label: "Education" },
+  project: { label: "Personal Project" },
+  work: { label: "Work" },
 };
 
 export default function ItemCard({
@@ -53,7 +47,6 @@ export default function ItemCard({
     bulletPoints,
     key,
     tools,
-    iconName,
   } = item;
 
   const startDateString = startDate ? formatDate(startDate) : "";
@@ -105,19 +98,19 @@ export default function ItemCard({
             <div className={styles.links}>
               {siteUrl && (
                 <a href={siteUrl} target="_blank">
-                  <IconWorld size={linkIconSize} />
+                  <IconWorld size={LINK_ICON_SIZE} />
                   <span>Visit</span>
                 </a>
               )}
               {repoUrl && (
                 <a href={repoUrl} target="_blank">
-                  <IconBrandGithub size={linkIconSize} />
+                  <IconBrandGithub size={LINK_ICON_SIZE} />
                   <span>Github</span>
                 </a>
               )}
               {figmaUrl && (
                 <a href={figmaUrl} target="_blank">
-                  <IconBrandFigma size={linkIconSize} />
+                  <IconBrandFigma size={LINK_ICON_SIZE} />
                   <span>Figma</span>
                 </a>
               )}
