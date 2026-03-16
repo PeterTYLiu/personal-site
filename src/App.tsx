@@ -43,75 +43,33 @@ function App() {
           Full-stack web dev & designer living in beautiful Toronto, Canada
         </h2>
         <p>
-          At <strong>Leap Tools</strong>, I led a design systems team, used by
-          dozens of developers, and customized by hundred of clients, including
-          Home Depot, Costco, and Redfin.
+          I know you're busy - let's quickly jump to what you're looking for!
         </p>
-        <p>
-          As a UX consultant, I've worked with clients including Samsung and
-          Crate & Barrel to design custom 3D/AR shopping experiences.
-        </p>
-        <p>
-          At Threekit, I worked closely with engineering to design their{" "}
-          <a
-            href="https://www.threekit.com/en/platform-overview"
-            target="_blank"
-            rel="noreferrer"
-          >
-            3D rendering interface
-          </a>{" "}
-          from the ground up, as well as a{" "}
-          <a
-            href="https://developer.threekit.com/reference/treble"
-            target="_blank"
-            rel="noreferrer"
-          >
-            React component library
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://www.figma.com/community/file/1027317639278516141/Threekit-React-Dev-Kit-Design-System"
-            target="_blank"
-            rel="noreferrer"
-          >
-            design system
-          </a>
-          .
-        </p>
-        <p>
-          My side projects have reached the{" "}
-          <a
-            href="https://news.ycombinator.com/item?id=36019354"
-            target="_blank"
-            rel="noreferrer"
-          >
-            front page of Hacker News
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://www.reddit.com/r/webdev/comments/13nc54m/i_made_a_3d_editor_that_models_in_pure_csshtml/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            blown up on Reddit
-          </a>
-          . I love TypeScript, cutting-edge CSS, and{" "}
-          <a href="https://css-tricks.com/using-the-platform/">
-            using the platform
-          </a>
-          .
-        </p>
+        <ul>
+          <li>My experience as a senior/founding developer</li>
+          <li>My work building design systems</li>
+          <li>My many stints at high-velocity startups</li>
+          <li>My high-traffic side projects</li>
+        </ul>
         <div className={styles.links}>
-          <a href="mailto:PeterBuildsStuff@gmail.com">
+          <a href="mailto:PeterBuildsStuff@gmail.com" aria-label="Email me">
             <IconMail />
           </a>
-          <a href="https://github.com/PeterTYLiu" target="_blank">
+          <a
+            href="https://github.com/PeterTYLiu"
+            target="_blank"
+            aria-label="My Github"
+          >
             <IconBrandGithub />
           </a>
-          <a href="https://www.linkedin.com/in/peter-ty-liu" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/peter-ty-liu"
+            target="_blank"
+            aria-label="My LinkedIn"
+          >
             <IconBrandLinkedin />
           </a>
-          <a href="/peter-liu-resume.pdf">
+          <a href="/peter-liu-resume.pdf" aria-label="My résumé">
             <IconFileCv />
           </a>
         </div>

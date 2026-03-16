@@ -73,6 +73,9 @@
     width: 32px;
     display: inline-grid;
     place-items: center;
+    &:hover {
+      background-color: color-mix(in hsl, currentColor 10%, transparent 90%);
+    }
     &:focus-visible {
       outline: 2px solid white;
     }

@@ -28,6 +28,9 @@
     align-items: center;
     gap: 4px;
     padding: 3px 0;
+    &:hover {
+      background-color: color-mix(in hsl, currentColor 10%, transparent 90%);
+    }
     &:focus-visible {
       outline: 2px solid var(--black);
       outline-offset: 3px;

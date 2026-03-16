@@ -11,8 +11,10 @@ export const data: Item[] = [
     location: "Toronto",
     position: "Senior Software Developer & Team Lead",
     bulletPoints: [
-      "Leading team of three to apply component library and enforce front-of-frontend best practices across multiple engineering teams",
-      "Ensure ADA-compliant accessibility for features used on Home Depot, Redfin, etc. public websites",
+      "Led a Design System Team maintaining a React component library for an AI room visualizer (Roomvo) with millions of daily users",
+      "Ensured ADA-compliant accessibility to enable deployments on Home Depot, Redfin, Costco, et. al. websites",
+      "Built complex, AI-driven frontend features using modern TypeScript, React, and Next.js, with excellent test coverage",
+      "Created high-fidelity mockups for new features/components in Figma",
     ],
     siteUrl: "https://roomvo.com",
     tools: [
@@ -39,8 +41,8 @@ export const data: Item[] = [
     location: "Toronto",
     position: "Software Developer",
     bulletPoints: [
-      "Lead developer on initiative to build and implement new design system, bridging design and engineering teams",
-      "Enforce best practices on frontend team with focus on design consistency, code quality, and accessibility",
+      "Built a ground-up design system for our React frontend, with focus on a11y, i18n, & customizability",
+      "Rewrote many parts of our flagship app (Roomvo) from Polymer to React, TypeScript, Next.js, and Redux, while maintaining uptime for millions of daily users",
     ],
     siteUrl: "https://leaptools.com",
     tools: [
