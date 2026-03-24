@@ -92,7 +92,7 @@ function App() {
           >
             <IconBrandLinkedin />
           </a>
-          <a href="/peter-liu-resume.pdf" aria-label="My résumé">
+          <a href="/Peter-Liu-resume-march-2026.pdf" aria-label="My résumé">
             <IconFileCv />
           </a>
         </div>
